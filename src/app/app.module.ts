@@ -9,13 +9,17 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
+import { HomePageComponent } from './home-page/home-page.component';
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      { path: '', component: HomePageComponent },
+      { path: 'products', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: 'cart', component: CartComponent },
     ]),
     NgbModule
   ],
@@ -25,6 +29,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductListComponent,
     ProductAlertsComponent,
     ProductDetailsComponent,
+    CartComponent,
+    HomePageComponent,
   ],
   bootstrap: [
     AppComponent
